@@ -19,7 +19,6 @@ LifeDAO-Selenium/
 │   ├── base_page.py
 │   ├── login_page.py
 │   ├── signup_page.py
-│   ├── dashboard_page.py
 │
 ├── tests/
 │   └── test_auth.py
@@ -41,9 +40,6 @@ LifeDAO-Selenium/
 ### 📝 Signup Flow
 - Click “Sign Up” from login page
 - Invite code entry → Signup form
-- Empty field validation (email, password)
-- Password strength rules
-- Repeat password validation
 
 ### 🔗 Page Navigation
 - Login → Sign Up
@@ -54,7 +50,7 @@ LifeDAO-Selenium/
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/lifedao-selenium-tests.git
+git clone https://github.com/sathishojsk/lifedao-selenium-tests.git
 cd lifedao-selenium-tests
 ```
 
@@ -90,7 +86,7 @@ python -m unittest tests.test_auth -v
 In `test_auth.py`, update:
 
 ```python
-BASE_URL = "https://your-lifedao-domain.com"
+BASE_URL = "https://uat.thelifedao.io/app/sign-in"
 ```
 
 ## 🧱 Page Object Model (POM)
@@ -98,8 +94,7 @@ BASE_URL = "https://your-lifedao-domain.com"
 Each UI screen has its own class:
 
 - `LoginPage` → login actions  
-- `SignupPage` → invite + signup actions  
-- `DashboardPage` → logout actions  
+- `SignupPage` → invite + signup actions 
 - `BasePage` → shared selenium methods (click, find, send_keys, waits)
 
 This ensures:
@@ -122,25 +117,6 @@ def test_new_feature(self):
     page.do_something()
     self.assertTrue(...)
 ```
-
-## 📷 Screenshots on Failure (Optional)
-
-Add this inside your test:
-
-```python
-if not result:
-    self.driver.save_screenshot("failure.png")
-```
-
-## 📤 Pushing Updates to GitHub
-
-```
-git add .
-git commit -m "Added signup tests"
-git push
-```
-
-## 🙌 Contributing
 
 Feel free to fork this repository and submit pull requests.
 
