@@ -72,13 +72,7 @@ webdriver-manager
 Run all tests:
 
 ```bash
-python -m unittest discover -v
-```
-
-Run a specific test file:
-
-```bash
-python -m unittest tests.test_auth -v
+python -m tests.test_auth
 ```
 
 ## 🌐 Update Base URL
